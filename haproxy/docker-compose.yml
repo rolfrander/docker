@@ -1,0 +1,41 @@
+version: "2"
+
+networks:
+  nextcloud:
+    external:
+      name: nextcloud_default
+      
+
+services:
+  haproxy:
+    build: haproxy
+    ports:
+      - "443:443"
+      - "80:80"
+    volumes_from:
+      - letsencrypt
+    networks:
+      - nextcloud
+    links:
+      - letsencrypt
+      
+  letsencrypt:
+    build: letsencrypt
+    # env-file must contain: DOMAINS, EMAIL
+    env_file:
+      - .env
+    environment:
+      - LOAD_BALANCER_SERVICE_NAME=haproxy
+      # THIS IS CRUCIAL when testing to avoid reaching the 5 certificates
+      # limit per domain. You'll end up waiting a week before being able 
+      # to regenerate a valid cert if you don't backup the once generated
+      #- OPTIONS=--staging
+
+    expose:
+      - "80"
+      
+    volumes:
+      - ./cert_backup:/etc/letsencrypt
+
+    networks:
+      - nextcloud

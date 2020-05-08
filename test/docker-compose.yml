@@ -1,0 +1,14 @@
+version: "3.0"
+
+networks:
+  default:
+    external:
+      name: nextcloud_default
+      
+services:
+  nginx:
+    image: nginx
+    
+  app:
+    image: nginx
+    

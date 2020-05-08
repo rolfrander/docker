@@ -1,0 +1,44 @@
+version: '3.7'
+
+volumes:
+  nextcloud:
+    driver: local-persist
+    driver_opts:
+      mountpoint: /data/nextcloud
+      
+services:
+  redis:
+    image: redis:alpine
+    restart: always
+    logging:
+      driver: splunk
+      options:
+        splunk-token: ${SPLUNK_TOKEN}
+        splunk-url: ${SPLUNK_URL}
+        splunk-format: raw
+        tag:
+      
+  nextcloud:
+    image: nextcloud
+    ports:
+      - 8080:80
+    links:
+      - redis
+    volumes:
+      - nextcloud:/var/www/html
+    restart: always
+    environment:
+      - REDIS_HOST=redis
+      - OVERWRITEHOST=cloud.folkestad-naess.name
+      - OVERWRITEPROTOCOL=https
+    env_file:
+      # expected environment in env-file: MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST
+      - ../splunk.env
+      - .env
+    logging:
+      driver: splunk
+      options:
+        splunk-token: ${SPLUNK_TOKEN}
+        splunk-url: ${SPLUNK_URL}
+        splunk-format: raw
+        tag:
