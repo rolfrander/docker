@@ -1,0 +1,153 @@
+{
+  "id": "5",
+  "cells": [
+    {
+      "i": "fdaab083-4f15-4639-9d64-4c1319636de7",
+      "x": 0,
+      "y": 0,
+      "w": 12,
+      "h": 4,
+      "name": "Temperatur",
+      "queries": [
+        {
+          "query": "SELECT last(\"value\") AS \"last_value\" FROM \"telegraf\".\"30_days\".\"fibaro\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"type\"='com.fibaro.temperatureSensor' GROUP BY time(:interval:), \"room\" FILL(null)",
+          "queryConfig": {
+            "database": "telegraf",
+            "measurement": "fibaro",
+            "retentionPolicy": "30_days",
+            "fields": [
+              {
+                "value": "last",
+                "type": "func",
+                "alias": "last_value",
+                "args": [
+                  {
+                    "value": "value",
+                    "type": "field",
+                    "alias": ""
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "type": [
+                "com.fibaro.temperatureSensor"
+              ]
+            },
+            "groupBy": {
+              "time": "auto",
+              "tags": [
+                "room"
+              ]
+            },
+            "areTagsAccepted": true,
+            "fill": "null",
+            "rawText": null,
+            "range": null,
+            "shifts": null
+          },
+          "source": "/chronograf/v1/sources/1",
+          "type": "influxql"
+        }
+      ],
+      "axes": {
+        "x": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        },
+        "y": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        },
+        "y2": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        }
+      },
+      "type": "line",
+      "colors": [
+        {
+          "id": "ae336f0c-4280-4a68-a326-735f99b62df6",
+          "type": "scale",
+          "hex": "#31C0F6",
+          "name": "Nineteen Eighty Four",
+          "value": "0"
+        },
+        {
+          "id": "5b124e2f-fb66-4461-8091-68747946b8a1",
+          "type": "scale",
+          "hex": "#A500A5",
+          "name": "Nineteen Eighty Four",
+          "value": "0"
+        },
+        {
+          "id": "e868bc93-d8ba-4294-b588-40e17e4aa2c9",
+          "type": "scale",
+          "hex": "#FF7E27",
+          "name": "Nineteen Eighty Four",
+          "value": "0"
+        }
+      ],
+      "legend": {
+        "type": "static",
+        "orientation": "bottom"
+      },
+      "tableOptions": {
+        "verticalTimeAxis": true,
+        "sortBy": {
+          "internalName": "time",
+          "displayName": "",
+          "visible": true
+        },
+        "wrapping": "truncate",
+        "fixFirstColumn": true
+      },
+      "fieldOptions": [
+        {
+          "internalName": "time",
+          "displayName": "",
+          "visible": true
+        }
+      ],
+      "timeFormat": "MM/DD/YYYY HH:mm:ss",
+      "decimalPlaces": {
+        "isEnforced": true,
+        "digits": 2
+      },
+      "note": "",
+      "noteVisibility": "default",
+      "links": {
+        "self": "/chronograf/v1/dashboards/5/cells/fdaab083-4f15-4639-9d64-4c1319636de7"
+      }
+    }
+  ],
+  "templates": [],
+  "name": "Hjemmeautomasjon",
+  "organization": "default",
+  "links": {
+    "self": "/chronograf/v1/dashboards/5",
+    "cells": "/chronograf/v1/dashboards/5/cells",
+    "templates": "/chronograf/v1/dashboards/5/templates"
+  }
+}

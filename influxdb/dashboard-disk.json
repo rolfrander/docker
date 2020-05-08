@@ -1,0 +1,1694 @@
+{
+
+    "id": "4",
+    "cells": [
+      {
+        "i": "7f8eb356-4aa3-4815-9cbb-4b58864848e4",
+        "x": 8,
+        "y": 13,
+        "w": 4,
+        "h": 3,
+        "name": "Stravinsky Temp",
+        "queries": [
+          {
+            "query": "SELECT mean(\"temp_c\") AS \"mean_temp_c\" FROM \"telegraf\".\"30_days\".\"smart_device\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='stravinsky' GROUP BY time(:interval:), \"device\" FILL(null)",
+            "queryConfig": {
+              "database": "telegraf",
+              "measurement": "smart_device",
+              "retentionPolicy": "30_days",
+              "fields": [
+                {
+                  "value": "mean",
+                  "type": "func",
+                  "alias": "mean_temp_c",
+                  "args": [
+                    {
+                      "value": "temp_c",
+                      "type": "field",
+                      "alias": ""
+                    }
+                  ]
+                }
+              ],
+              "tags": {
+                "host": [
+                  "stravinsky"
+                ]
+              },
+              "groupBy": {
+                "time": "auto",
+                "tags": [
+                  "device"
+                ]
+              },
+              "areTagsAccepted": true,
+              "fill": "null",
+              "rawText": null,
+              "range": null,
+              "shifts": null
+            },
+            "source": "",
+            "type": "influxql"
+          }
+        ],
+        "axes": {
+          "x": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y2": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          }
+        },
+        "type": "line",
+        "colors": [
+          {
+            "id": "46b7085a-d185-4980-b30e-359b79c01fe7",
+            "type": "scale",
+            "hex": "#31C0F6",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "d17f6f2c-043e-4561-b3ec-909389cbda8c",
+            "type": "scale",
+            "hex": "#A500A5",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "5493ff38-fdb6-4e37-852d-61260253d371",
+            "type": "scale",
+            "hex": "#FF7E27",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          }
+        ],
+        "legend": {},
+        "tableOptions": {
+          "verticalTimeAxis": true,
+          "sortBy": {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          },
+          "wrapping": "truncate",
+          "fixFirstColumn": true
+        },
+        "fieldOptions": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "timeFormat": "MM/DD/YYYY HH:mm:ss",
+        "decimalPlaces": {
+          "isEnforced": true,
+          "digits": 2
+        },
+        "note": "",
+        "noteVisibility": "default",
+        "links": {
+          "self": "/chronograf/v1/dashboards/4/cells/7f8eb356-4aa3-4815-9cbb-4b58864848e4"
+        }
+      },
+      {
+        "i": "50c8da24-6197-4f2d-adf6-544a8e679a13",
+        "x": 8,
+        "y": 10,
+        "w": 4,
+        "h": 3,
+        "name": "Stravinsky Errors",
+        "queries": [
+          {
+            "query": "SELECT mean(\"read_error_rate\") AS \"mean_read_error_rate\", mean(\"seek_error_rate\") AS \"mean_seek_error_rate\", mean(\"udma_crc_errors\") AS \"mean_udma_crc_errors\" FROM \"telegraf\".\"30_days\".\"smart_device\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='stravinsky' GROUP BY time(:interval:), \"device\" FILL(null)",
+            "queryConfig": {
+              "database": "telegraf",
+              "measurement": "smart_device",
+              "retentionPolicy": "30_days",
+              "fields": [
+                {
+                  "value": "mean",
+                  "type": "func",
+                  "alias": "mean_read_error_rate",
+                  "args": [
+                    {
+                      "value": "read_error_rate",
+                      "type": "field",
+                      "alias": ""
+                    }
+                  ]
+                },
+                {
+                  "value": "mean",
+                  "type": "func",
+                  "alias": "mean_seek_error_rate",
+                  "args": [
+                    {
+                      "value": "seek_error_rate",
+                      "type": "field",
+                      "alias": ""
+                    }
+                  ]
+                },
+                {
+                  "value": "mean",
+                  "type": "func",
+                  "alias": "mean_udma_crc_errors",
+                  "args": [
+                    {
+                      "value": "udma_crc_errors",
+                      "type": "field",
+                      "alias": ""
+                    }
+                  ]
+                }
+              ],
+              "tags": {
+                "host": [
+                  "stravinsky"
+                ]
+              },
+              "groupBy": {
+                "time": "auto",
+                "tags": [
+                  "device"
+                ]
+              },
+              "areTagsAccepted": true,
+              "fill": "null",
+              "rawText": null,
+              "range": null,
+              "shifts": null
+            },
+            "source": "",
+            "type": "influxql"
+          }
+        ],
+        "axes": {
+          "x": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y2": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          }
+        },
+        "type": "line",
+        "colors": [
+          {
+            "id": "46b7085a-d185-4980-b30e-359b79c01fe7",
+            "type": "scale",
+            "hex": "#31C0F6",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "d17f6f2c-043e-4561-b3ec-909389cbda8c",
+            "type": "scale",
+            "hex": "#A500A5",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "5493ff38-fdb6-4e37-852d-61260253d371",
+            "type": "scale",
+            "hex": "#FF7E27",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          }
+        ],
+        "legend": {},
+        "tableOptions": {
+          "verticalTimeAxis": true,
+          "sortBy": {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          },
+          "wrapping": "truncate",
+          "fixFirstColumn": true
+        },
+        "fieldOptions": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "timeFormat": "MM/DD/YYYY HH:mm:ss",
+        "decimalPlaces": {
+          "isEnforced": true,
+          "digits": 2
+        },
+        "note": "",
+        "noteVisibility": "default",
+        "links": {
+          "self": "/chronograf/v1/dashboards/4/cells/50c8da24-6197-4f2d-adf6-544a8e679a13"
+        }
+      },
+      {
+        "i": "0a32652f-f13d-4573-b4ad-671bc75ffdb3",
+        "x": 8,
+        "y": 7,
+        "w": 4,
+        "h": 3,
+        "name": "Stravinsky IO bytes",
+        "queries": [
+          {
+            "query": "SELECT -derivative(last(\"read_bytes\"),1s) AS \"read_bytes\", derivative(last(\"write_bytes\"),1s) AS \"write_bytes\" FROM \"telegraf\".\"30_days\".\"diskio\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='stravinsky' GROUP BY time(:interval:), \"name\" FILL(null)",
+            "queryConfig": {
+              "database": "",
+              "measurement": "",
+              "retentionPolicy": "",
+              "fields": [],
+              "tags": {},
+              "groupBy": {
+                "time": "",
+                "tags": []
+              },
+              "areTagsAccepted": false,
+              "rawText": "SELECT -derivative(last(\"read_bytes\"),1s) AS \"read_bytes\", derivative(last(\"write_bytes\"),1s) AS \"write_bytes\" FROM \"telegraf\".\"30_days\".\"diskio\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='stravinsky' GROUP BY time(:interval:), \"name\" FILL(null)",
+              "range": null,
+              "shifts": null
+            },
+            "source": "",
+            "type": "influxql"
+          }
+        ],
+        "axes": {
+          "x": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y2": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          }
+        },
+        "type": "line",
+        "colors": [
+          {
+            "id": "db0109fd-52be-4f03-82cd-0fccb3456fba",
+            "type": "scale",
+            "hex": "#31C0F6",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "0d68ca58-42e6-4e2a-915e-012e686d9c2d",
+            "type": "scale",
+            "hex": "#A500A5",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "11ca1c4b-7f69-44a3-9acd-4ec84411babd",
+            "type": "scale",
+            "hex": "#FF7E27",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          }
+        ],
+        "legend": {},
+        "tableOptions": {
+          "verticalTimeAxis": true,
+          "sortBy": {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          },
+          "wrapping": "truncate",
+          "fixFirstColumn": true
+        },
+        "fieldOptions": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "timeFormat": "MM/DD/YYYY HH:mm:ss",
+        "decimalPlaces": {
+          "isEnforced": true,
+          "digits": 2
+        },
+        "note": "",
+        "noteVisibility": "default",
+        "links": {
+          "self": "/chronograf/v1/dashboards/4/cells/0a32652f-f13d-4573-b4ad-671bc75ffdb3"
+        }
+      },
+      {
+        "i": "a0e96e88-5d0d-44a6-afd5-01bebe2992b0",
+        "x": 8,
+        "y": 4,
+        "w": 4,
+        "h": 3,
+        "name": "Stravinsky IOPS",
+        "queries": [
+          {
+            "query": "SELECT -derivative(last(\"reads\"),1s) AS \"reads\", derivative(last(\"writes\"),1s) AS \"writes\" FROM \"telegraf\".\"30_days\".\"diskio\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='stravinsky' GROUP BY time(:interval:), \"name\" FILL(null)",
+            "queryConfig": {
+              "database": "",
+              "measurement": "",
+              "retentionPolicy": "",
+              "fields": [],
+              "tags": {},
+              "groupBy": {
+                "time": "",
+                "tags": []
+              },
+              "areTagsAccepted": false,
+              "rawText": "SELECT -derivative(last(\"reads\"),1s) AS \"reads\", derivative(last(\"writes\"),1s) AS \"writes\" FROM \"telegraf\".\"30_days\".\"diskio\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='stravinsky' GROUP BY time(:interval:), \"name\" FILL(null)",
+              "range": null,
+              "shifts": null
+            },
+            "source": "",
+            "type": "influxql"
+          }
+        ],
+        "axes": {
+          "x": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y2": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          }
+        },
+        "type": "line",
+        "colors": [
+          {
+            "id": "9dff3f2a-ada0-4956-8d04-2b12e873df81",
+            "type": "scale",
+            "hex": "#31C0F6",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "5cdf07ff-cc65-44fa-93f4-fa73bc9beaca",
+            "type": "scale",
+            "hex": "#A500A5",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "2e065140-220f-48ce-9fc5-3b339939d211",
+            "type": "scale",
+            "hex": "#FF7E27",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          }
+        ],
+        "legend": {},
+        "tableOptions": {
+          "verticalTimeAxis": true,
+          "sortBy": {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          },
+          "wrapping": "truncate",
+          "fixFirstColumn": true
+        },
+        "fieldOptions": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "timeFormat": "MM/DD/YYYY HH:mm:ss",
+        "decimalPlaces": {
+          "isEnforced": true,
+          "digits": 2
+        },
+        "note": "",
+        "noteVisibility": "default",
+        "links": {
+          "self": "/chronograf/v1/dashboards/4/cells/a0e96e88-5d0d-44a6-afd5-01bebe2992b0"
+        }
+      },
+      {
+        "i": "192085d6-da08-4c76-b2b6-54f8498b20c3",
+        "x": 8,
+        "y": 0,
+        "w": 4,
+        "h": 4,
+        "name": "Stravinsky free",
+        "queries": [
+          {
+            "query": "SELECT 100-mean(\"used_percent\") AS \"free\" FROM \"telegraf\".\"30_days\".\"disk\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='stravinsky' AND (\"path\"='/' OR \"path\"='/boot' OR \"path\"='/data' OR \"path\"='/home/rolfn/Dropbox' OR \"path\"='/home/tonje/Dropbox' OR \"path\"='/tmp' OR \"path\"='/var') GROUP BY time(:interval:), \"path\" FILL(null)",
+            "queryConfig": {
+              "database": "",
+              "measurement": "",
+              "retentionPolicy": "",
+              "fields": [],
+              "tags": {},
+              "groupBy": {
+                "time": "",
+                "tags": []
+              },
+              "areTagsAccepted": false,
+              "rawText": "SELECT 100-mean(\"used_percent\") AS \"free\" FROM \"telegraf\".\"30_days\".\"disk\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='stravinsky' AND (\"path\"='/' OR \"path\"='/boot' OR \"path\"='/data' OR \"path\"='/home/rolfn/Dropbox' OR \"path\"='/home/tonje/Dropbox' OR \"path\"='/tmp' OR \"path\"='/var') GROUP BY time(:interval:), \"path\" FILL(null)",
+              "range": null,
+              "shifts": null
+            },
+            "source": "",
+            "type": "influxql"
+          }
+        ],
+        "axes": {
+          "x": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y": {
+            "bounds": [
+              "0",
+              "100"
+            ],
+            "label": "free %",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y2": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          }
+        },
+        "type": "line",
+        "colors": [
+          {
+            "id": "46b7085a-d185-4980-b30e-359b79c01fe7",
+            "type": "scale",
+            "hex": "#31C0F6",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "d17f6f2c-043e-4561-b3ec-909389cbda8c",
+            "type": "scale",
+            "hex": "#A500A5",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "5493ff38-fdb6-4e37-852d-61260253d371",
+            "type": "scale",
+            "hex": "#FF7E27",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          }
+        ],
+        "legend": {
+          "type": "static",
+          "orientation": "bottom"
+        },
+        "tableOptions": {
+          "verticalTimeAxis": true,
+          "sortBy": {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          },
+          "wrapping": "truncate",
+          "fixFirstColumn": true
+        },
+        "fieldOptions": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "timeFormat": "MM/DD/YYYY HH:mm:ss",
+        "decimalPlaces": {
+          "isEnforced": true,
+          "digits": 2
+        },
+        "note": "",
+        "noteVisibility": "default",
+        "links": {
+          "self": "/chronograf/v1/dashboards/4/cells/192085d6-da08-4c76-b2b6-54f8498b20c3"
+        }
+      },
+      {
+        "i": "dd356299-03de-4f22-8dc2-2218b917cbe9",
+        "x": 4,
+        "y": 7,
+        "w": 4,
+        "h": 3,
+        "name": "Sjosta IOBYTES",
+        "queries": [
+          {
+            "query": "SELECT -mean(\"Disk_Read_Bytes_persec\") AS \"read\", mean(\"Disk_Write_Bytes_persec\") AS \"write\" FROM \"telegraf\".\"30_days\".\"win_diskio\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='SJOSTA' GROUP BY time(:interval:), \"instance\" FILL(null)",
+            "queryConfig": {
+              "database": "",
+              "measurement": "",
+              "retentionPolicy": "",
+              "fields": [],
+              "tags": {},
+              "groupBy": {
+                "time": "",
+                "tags": []
+              },
+              "areTagsAccepted": false,
+              "rawText": "SELECT -mean(\"Disk_Read_Bytes_persec\") AS \"read\", mean(\"Disk_Write_Bytes_persec\") AS \"write\" FROM \"telegraf\".\"30_days\".\"win_diskio\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='SJOSTA' GROUP BY time(:interval:), \"instance\" FILL(null)",
+              "range": null,
+              "shifts": null
+            },
+            "source": "",
+            "type": "influxql"
+          }
+        ],
+        "axes": {
+          "x": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y2": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          }
+        },
+        "type": "line",
+        "colors": [
+          {
+            "id": "5143e386-7cc5-4b42-a044-b72b175119a8",
+            "type": "scale",
+            "hex": "#31C0F6",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "ec6ecb6b-df12-4a6a-bf14-978e8c958c7c",
+            "type": "scale",
+            "hex": "#A500A5",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "bcb64ae7-bc14-4d7e-b0b1-c73faac60776",
+            "type": "scale",
+            "hex": "#FF7E27",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          }
+        ],
+        "legend": {},
+        "tableOptions": {
+          "verticalTimeAxis": true,
+          "sortBy": {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          },
+          "wrapping": "truncate",
+          "fixFirstColumn": true
+        },
+        "fieldOptions": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "timeFormat": "MM/DD/YYYY HH:mm:ss",
+        "decimalPlaces": {
+          "isEnforced": true,
+          "digits": 2
+        },
+        "note": "",
+        "noteVisibility": "default",
+        "links": {
+          "self": "/chronograf/v1/dashboards/4/cells/dd356299-03de-4f22-8dc2-2218b917cbe9"
+        }
+      },
+      {
+        "i": "195cde77-3f2e-4316-bf05-cd9176499440",
+        "x": 4,
+        "y": 4,
+        "w": 4,
+        "h": 3,
+        "name": "Sjosta IOPS",
+        "queries": [
+          {
+            "query": "SELECT -mean(\"Disk_Reads_persec\") AS \"reads\", mean(\"Disk_Writes_persec\") AS \"writes\" FROM \"telegraf\".\"30_days\".\"win_diskio\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='SJOSTA' GROUP BY time(:interval:), \"instance\" FILL(null)",
+            "queryConfig": {
+              "database": "",
+              "measurement": "",
+              "retentionPolicy": "",
+              "fields": [],
+              "tags": {},
+              "groupBy": {
+                "time": "",
+                "tags": []
+              },
+              "areTagsAccepted": false,
+              "rawText": "SELECT -mean(\"Disk_Reads_persec\") AS \"reads\", mean(\"Disk_Writes_persec\") AS \"writes\" FROM \"telegraf\".\"30_days\".\"win_diskio\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='SJOSTA' GROUP BY time(:interval:), \"instance\" FILL(null)",
+              "range": null,
+              "shifts": null
+            },
+            "source": "",
+            "type": "influxql"
+          }
+        ],
+        "axes": {
+          "x": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y2": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          }
+        },
+        "type": "line",
+        "colors": [
+          {
+            "id": "5143e386-7cc5-4b42-a044-b72b175119a8",
+            "type": "scale",
+            "hex": "#31C0F6",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "ec6ecb6b-df12-4a6a-bf14-978e8c958c7c",
+            "type": "scale",
+            "hex": "#A500A5",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "bcb64ae7-bc14-4d7e-b0b1-c73faac60776",
+            "type": "scale",
+            "hex": "#FF7E27",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          }
+        ],
+        "legend": {},
+        "tableOptions": {
+          "verticalTimeAxis": true,
+          "sortBy": {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          },
+          "wrapping": "truncate",
+          "fixFirstColumn": true
+        },
+        "fieldOptions": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "timeFormat": "MM/DD/YYYY HH:mm:ss",
+        "decimalPlaces": {
+          "isEnforced": true,
+          "digits": 2
+        },
+        "note": "",
+        "noteVisibility": "default",
+        "links": {
+          "self": "/chronograf/v1/dashboards/4/cells/195cde77-3f2e-4316-bf05-cd9176499440"
+        }
+      },
+      {
+        "i": "aabbdde2-4bda-47cd-a4ac-15226df1a591",
+        "x": 0,
+        "y": 10,
+        "w": 4,
+        "h": 3,
+        "name": "Errors",
+        "queries": [
+          {
+            "query": "SELECT mean(\"read_error_rate\") AS \"mean_read_error_rate\", mean(\"seek_error_rate\") AS \"mean_seek_error_rate\", mean(\"udma_crc_errors\") AS \"mean_udma_crc_errors\" FROM \"telegraf\".\"30_days\".\"smart_device\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='mozart' GROUP BY time(:interval:), \"device\" FILL(null)",
+            "queryConfig": {
+              "database": "telegraf",
+              "measurement": "smart_device",
+              "retentionPolicy": "30_days",
+              "fields": [
+                {
+                  "value": "mean",
+                  "type": "func",
+                  "alias": "mean_read_error_rate",
+                  "args": [
+                    {
+                      "value": "read_error_rate",
+                      "type": "field",
+                      "alias": ""
+                    }
+                  ]
+                },
+                {
+                  "value": "mean",
+                  "type": "func",
+                  "alias": "mean_seek_error_rate",
+                  "args": [
+                    {
+                      "value": "seek_error_rate",
+                      "type": "field",
+                      "alias": ""
+                    }
+                  ]
+                },
+                {
+                  "value": "mean",
+                  "type": "func",
+                  "alias": "mean_udma_crc_errors",
+                  "args": [
+                    {
+                      "value": "udma_crc_errors",
+                      "type": "field",
+                      "alias": ""
+                    }
+                  ]
+                }
+              ],
+              "tags": {
+                "host": [
+                  "mozart"
+                ]
+              },
+              "groupBy": {
+                "time": "auto",
+                "tags": [
+                  "device"
+                ]
+              },
+              "areTagsAccepted": true,
+              "fill": "null",
+              "rawText": null,
+              "range": null,
+              "shifts": null
+            },
+            "source": "",
+            "type": "influxql"
+          }
+        ],
+        "axes": {
+          "x": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y2": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          }
+        },
+        "type": "line",
+        "colors": [
+          {
+            "id": "46b7085a-d185-4980-b30e-359b79c01fe7",
+            "type": "scale",
+            "hex": "#31C0F6",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "d17f6f2c-043e-4561-b3ec-909389cbda8c",
+            "type": "scale",
+            "hex": "#A500A5",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "5493ff38-fdb6-4e37-852d-61260253d371",
+            "type": "scale",
+            "hex": "#FF7E27",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          }
+        ],
+        "legend": {},
+        "tableOptions": {
+          "verticalTimeAxis": true,
+          "sortBy": {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          },
+          "wrapping": "truncate",
+          "fixFirstColumn": true
+        },
+        "fieldOptions": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "timeFormat": "MM/DD/YYYY HH:mm:ss",
+        "decimalPlaces": {
+          "isEnforced": true,
+          "digits": 2
+        },
+        "note": "",
+        "noteVisibility": "default",
+        "links": {
+          "self": "/chronograf/v1/dashboards/4/cells/aabbdde2-4bda-47cd-a4ac-15226df1a591"
+        }
+      },
+      {
+        "i": "381a3cdd-1008-4287-b6ae-e573a493dc6b",
+        "x": 0,
+        "y": 0,
+        "w": 4,
+        "h": 4,
+        "name": "Mozart free",
+        "queries": [
+          {
+            "query": "SELECT 100-mean(\"used_percent\") AS \"free\" FROM \"telegraf\".\"30_days\".\"disk\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='mozart' AND (\"path\"='/' OR \"path\"='/boot' OR \"path\"='/data' OR \"path\"='/home/rolfn/Dropbox' OR \"path\"='/home/tonje/Dropbox' OR \"path\"='/tmp' OR \"path\"='/var') GROUP BY time(:interval:), \"path\" FILL(null)",
+            "queryConfig": {
+              "database": "",
+              "measurement": "",
+              "retentionPolicy": "",
+              "fields": [],
+              "tags": {},
+              "groupBy": {
+                "time": "",
+                "tags": []
+              },
+              "areTagsAccepted": false,
+              "rawText": "SELECT 100-mean(\"used_percent\") AS \"free\" FROM \"telegraf\".\"30_days\".\"disk\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='mozart' AND (\"path\"='/' OR \"path\"='/boot' OR \"path\"='/data' OR \"path\"='/home/rolfn/Dropbox' OR \"path\"='/home/tonje/Dropbox' OR \"path\"='/tmp' OR \"path\"='/var') GROUP BY time(:interval:), \"path\" FILL(null)",
+              "range": null,
+              "shifts": null
+            },
+            "source": "",
+            "type": "influxql"
+          }
+        ],
+        "axes": {
+          "x": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y": {
+            "bounds": [
+              "0",
+              "100"
+            ],
+            "label": "free %",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y2": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          }
+        },
+        "type": "line",
+        "colors": [
+          {
+            "id": "46b7085a-d185-4980-b30e-359b79c01fe7",
+            "type": "scale",
+            "hex": "#31C0F6",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "d17f6f2c-043e-4561-b3ec-909389cbda8c",
+            "type": "scale",
+            "hex": "#A500A5",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "5493ff38-fdb6-4e37-852d-61260253d371",
+            "type": "scale",
+            "hex": "#FF7E27",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          }
+        ],
+        "legend": {
+          "type": "static",
+          "orientation": "bottom"
+        },
+        "tableOptions": {
+          "verticalTimeAxis": true,
+          "sortBy": {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          },
+          "wrapping": "truncate",
+          "fixFirstColumn": true
+        },
+        "fieldOptions": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "timeFormat": "MM/DD/YYYY HH:mm:ss",
+        "decimalPlaces": {
+          "isEnforced": true,
+          "digits": 2
+        },
+        "note": "",
+        "noteVisibility": "default",
+        "links": {
+          "self": "/chronograf/v1/dashboards/4/cells/381a3cdd-1008-4287-b6ae-e573a493dc6b"
+        }
+      },
+      {
+        "i": "e66b73d2-4364-48a7-a216-309f946533b1",
+        "x": 0,
+        "y": 13,
+        "w": 4,
+        "h": 3,
+        "name": "Temp",
+        "queries": [
+          {
+            "query": "SELECT mean(\"temp_c\") AS \"mean_temp_c\" FROM \"telegraf\".\"30_days\".\"smart_device\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='mozart' GROUP BY time(:interval:), \"device\" FILL(null)",
+            "queryConfig": {
+              "database": "telegraf",
+              "measurement": "smart_device",
+              "retentionPolicy": "30_days",
+              "fields": [
+                {
+                  "value": "mean",
+                  "type": "func",
+                  "alias": "mean_temp_c",
+                  "args": [
+                    {
+                      "value": "temp_c",
+                      "type": "field",
+                      "alias": ""
+                    }
+                  ]
+                }
+              ],
+              "tags": {
+                "host": [
+                  "mozart"
+                ]
+              },
+              "groupBy": {
+                "time": "auto",
+                "tags": [
+                  "device"
+                ]
+              },
+              "areTagsAccepted": true,
+              "fill": "null",
+              "rawText": null,
+              "range": null,
+              "shifts": null
+            },
+            "source": "",
+            "type": "influxql"
+          }
+        ],
+        "axes": {
+          "x": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y2": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          }
+        },
+        "type": "line",
+        "colors": [
+          {
+            "id": "46b7085a-d185-4980-b30e-359b79c01fe7",
+            "type": "scale",
+            "hex": "#31C0F6",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "d17f6f2c-043e-4561-b3ec-909389cbda8c",
+            "type": "scale",
+            "hex": "#A500A5",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "5493ff38-fdb6-4e37-852d-61260253d371",
+            "type": "scale",
+            "hex": "#FF7E27",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          }
+        ],
+        "legend": {},
+        "tableOptions": {
+          "verticalTimeAxis": true,
+          "sortBy": {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          },
+          "wrapping": "truncate",
+          "fixFirstColumn": true
+        },
+        "fieldOptions": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "timeFormat": "MM/DD/YYYY HH:mm:ss",
+        "decimalPlaces": {
+          "isEnforced": true,
+          "digits": 2
+        },
+        "note": "",
+        "noteVisibility": "default",
+        "links": {
+          "self": "/chronograf/v1/dashboards/4/cells/e66b73d2-4364-48a7-a216-309f946533b1"
+        }
+      },
+      {
+        "i": "5c0e1440-7bbc-4356-8d8a-71ffc03b52f1",
+        "x": 0,
+        "y": 4,
+        "w": 4,
+        "h": 3,
+        "name": "IOPS",
+        "queries": [
+          {
+            "query": "SELECT -derivative(last(\"reads\"),1s) AS \"reads\", derivative(last(\"writes\"),1s) AS \"writes\" FROM \"telegraf\".\"30_days\".\"diskio\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='mozart' AND (\"name\"='sdb1' OR \"name\"='dm-1' OR \"name\"='dm-2' OR \"name\"='dm-3' OR \"name\"='sdg' OR \"name\"='sdh' OR \"name\"='sdi' OR \"name\"='sdj') GROUP BY time(:interval:), \"name\" FILL(null)",
+            "queryConfig": {
+              "database": "",
+              "measurement": "",
+              "retentionPolicy": "",
+              "fields": [],
+              "tags": {},
+              "groupBy": {
+                "time": "",
+                "tags": []
+              },
+              "areTagsAccepted": false,
+              "rawText": "SELECT -derivative(last(\"reads\"),1s) AS \"reads\", derivative(last(\"writes\"),1s) AS \"writes\" FROM \"telegraf\".\"30_days\".\"diskio\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='mozart' AND (\"name\"='sdb1' OR \"name\"='dm-1' OR \"name\"='dm-2' OR \"name\"='dm-3' OR \"name\"='sdg' OR \"name\"='sdh' OR \"name\"='sdi' OR \"name\"='sdj') GROUP BY time(:interval:), \"name\" FILL(null)",
+              "range": null,
+              "shifts": null
+            },
+            "source": "",
+            "type": "influxql"
+          }
+        ],
+        "axes": {
+          "x": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y2": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          }
+        },
+        "type": "line",
+        "colors": [
+          {
+            "id": "9dff3f2a-ada0-4956-8d04-2b12e873df81",
+            "type": "scale",
+            "hex": "#31C0F6",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "5cdf07ff-cc65-44fa-93f4-fa73bc9beaca",
+            "type": "scale",
+            "hex": "#A500A5",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "2e065140-220f-48ce-9fc5-3b339939d211",
+            "type": "scale",
+            "hex": "#FF7E27",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          }
+        ],
+        "legend": {},
+        "tableOptions": {
+          "verticalTimeAxis": true,
+          "sortBy": {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          },
+          "wrapping": "truncate",
+          "fixFirstColumn": true
+        },
+        "fieldOptions": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "timeFormat": "MM/DD/YYYY HH:mm:ss",
+        "decimalPlaces": {
+          "isEnforced": true,
+          "digits": 2
+        },
+        "note": "",
+        "noteVisibility": "default",
+        "links": {
+          "self": "/chronograf/v1/dashboards/4/cells/5c0e1440-7bbc-4356-8d8a-71ffc03b52f1"
+        }
+      },
+      {
+        "i": "390aed1a-7671-41e9-8602-50373ee8b2fa",
+        "x": 0,
+        "y": 7,
+        "w": 4,
+        "h": 3,
+        "name": "IO bytes",
+        "queries": [
+          {
+            "query": "SELECT -derivative(last(\"read_bytes\"),1s) AS \"read_bytes\", derivative(last(\"write_bytes\"),1s) AS \"write_bytes\" FROM \"telegraf\".\"30_days\".\"diskio\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='mozart' GROUP BY time(:interval:), \"name\" FILL(null)",
+            "queryConfig": {
+              "database": "",
+              "measurement": "",
+              "retentionPolicy": "",
+              "fields": [],
+              "tags": {},
+              "groupBy": {
+                "time": "",
+                "tags": []
+              },
+              "areTagsAccepted": false,
+              "rawText": "SELECT -derivative(last(\"read_bytes\"),1s) AS \"read_bytes\", derivative(last(\"write_bytes\"),1s) AS \"write_bytes\" FROM \"telegraf\".\"30_days\".\"diskio\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='mozart' GROUP BY time(:interval:), \"name\" FILL(null)",
+              "range": null,
+              "shifts": null
+            },
+            "source": "",
+            "type": "influxql"
+          }
+        ],
+        "axes": {
+          "x": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y2": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          }
+        },
+        "type": "line",
+        "colors": [
+          {
+            "id": "db0109fd-52be-4f03-82cd-0fccb3456fba",
+            "type": "scale",
+            "hex": "#31C0F6",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "0d68ca58-42e6-4e2a-915e-012e686d9c2d",
+            "type": "scale",
+            "hex": "#A500A5",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          },
+          {
+            "id": "11ca1c4b-7f69-44a3-9acd-4ec84411babd",
+            "type": "scale",
+            "hex": "#FF7E27",
+            "name": "Nineteen Eighty Four",
+            "value": "0"
+          }
+        ],
+        "legend": {},
+        "tableOptions": {
+          "verticalTimeAxis": true,
+          "sortBy": {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          },
+          "wrapping": "truncate",
+          "fixFirstColumn": true
+        },
+        "fieldOptions": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "timeFormat": "MM/DD/YYYY HH:mm:ss",
+        "decimalPlaces": {
+          "isEnforced": true,
+          "digits": 2
+        },
+        "note": "",
+        "noteVisibility": "default",
+        "links": {
+          "self": "/chronograf/v1/dashboards/4/cells/390aed1a-7671-41e9-8602-50373ee8b2fa"
+        }
+      },
+      {
+        "i": "03b8ee24-8fd6-46c3-93d8-8abd87d4ed5d",
+        "x": 4,
+        "y": 0,
+        "w": 4,
+        "h": 4,
+        "name": "Sjosta free",
+        "queries": [
+          {
+            "query": "SELECT mean(\"Percent_Free_Space\") AS \"free\" FROM \"telegraf\".\"30_days\".\"win_disk\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='SJOSTA' AND \"instance\"='C:' GROUP BY time(:interval:) FILL(null)",
+            "queryConfig": {
+              "database": "telegraf",
+              "measurement": "win_disk",
+              "retentionPolicy": "30_days",
+              "fields": [
+                {
+                  "value": "mean",
+                  "type": "func",
+                  "alias": "free",
+                  "args": [
+                    {
+                      "value": "Percent_Free_Space",
+                      "type": "field",
+                      "alias": ""
+                    }
+                  ]
+                }
+              ],
+              "tags": {
+                "host": [
+                  "SJOSTA"
+                ],
+                "instance": [
+                  "C:"
+                ]
+              },
+              "groupBy": {
+                "time": "auto",
+                "tags": []
+              },
+              "areTagsAccepted": true,
+              "fill": "null",
+              "rawText": null,
+              "range": null,
+              "shifts": null
+            },
+            "source": "/chronograf/v1/sources/1",
+            "type": "influxql"
+          }
+        ],
+        "axes": {
+          "x": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y": {
+            "bounds": [
+              "0",
+              "100"
+            ],
+            "label": "free %",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          },
+          "y2": {
+            "bounds": [
+              "",
+              ""
+            ],
+            "label": "",
+            "prefix": "",
+            "suffix": "",
+            "base": "10",
+            "scale": "linear"
+          }
+        },
+        "type": "line",
+        "colors": [
+          {
+            "id": "eaff2618-4aac-465d-a7d9-fed2e3af69da",
+            "type": "scale",
+            "hex": "#FD7A5D",
+            "name": "Delorean",
+            "value": "0"
+          },
+          {
+            "id": "568ac66e-3510-4b87-a54d-49b43370ca3f",
+            "type": "scale",
+            "hex": "#5F1CF2",
+            "name": "Delorean",
+            "value": "0"
+          },
+          {
+            "id": "07caf691-17fc-479c-8b09-99cd3b8d6926",
+            "type": "scale",
+            "hex": "#4CE09A",
+            "name": "Delorean",
+            "value": "0"
+          }
+        ],
+        "legend": {
+          "type": "static",
+          "orientation": "bottom"
+        },
+        "tableOptions": {
+          "verticalTimeAxis": true,
+          "sortBy": {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          },
+          "wrapping": "truncate",
+          "fixFirstColumn": true
+        },
+        "fieldOptions": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "timeFormat": "MM/DD/YYYY HH:mm:ss",
+        "decimalPlaces": {
+          "isEnforced": true,
+          "digits": 2
+        },
+        "note": "",
+        "noteVisibility": "default",
+        "links": {
+          "self": "/chronograf/v1/dashboards/4/cells/03b8ee24-8fd6-46c3-93d8-8abd87d4ed5d"
+        }
+      }
+    ],
+    "templates": [],
+    "name": "Disk",
+    "organization": "default",
+    "links": {
+      "self": "/chronograf/v1/dashboards/4",
+      "cells": "/chronograf/v1/dashboards/4/cells",
+      "templates": "/chronograf/v1/dashboards/4/templates"
+    }
+
+}
