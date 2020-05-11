@@ -19,3 +19,5 @@ for DOMAINS in "${CERTS[@]}"; do
 		--webroot-path /opt/www \
 		$OPTIONS || true
 done
+
+ocsp-staple.sh

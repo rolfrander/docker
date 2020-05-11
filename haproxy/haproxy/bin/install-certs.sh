@@ -17,11 +17,12 @@ cd "$LIVE_CERT_FOLDER"
 for DIR in *
 do
     if [ -d "$DIR" ]
-    then 
-	cat "$DIR/privkey.pem" "$DIR/fullchain.pem" > /certs/${DIR}.pem
+    then
+			cat "$DIR/privkey.pem" "$DIR/fullchain.pem" > /certs/${DIR}.pem
+			if [ -r "$DIR/cert.pem.ocsp" ]
+			then cp "$DIR/cert.pem.ocsp" /certs/${DIR}.pem.ocsp
+			fi
     fi
 done
 
-# ocsp-staple also reloads haproxy
-ocsp-staple.sh
-
+reload.sh
