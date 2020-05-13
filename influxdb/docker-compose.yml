@@ -22,6 +22,7 @@ services:
         tag:
 
   chronograf:
+    # for backup av chronograf dashboards, se https://www.influxdata.com/blog/chronograf-dashboard-definitions/
     image: chronograf
     ports:
       - 8888:8888
